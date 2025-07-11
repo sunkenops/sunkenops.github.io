@@ -51,7 +51,7 @@ header {
   font-weight: 600;
 }
 
-.goal {
+.goal, .activities-info{
   padding: 1rem 2rem;
 }
 
@@ -93,6 +93,20 @@ form button {
   color: white;
   border: none;
   cursor: pointer;
+}
+
+#thank-you-message {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.5s ease, max-height 0.5s ease;
+  color: green;
+  font-weight: bold;
+}
+
+#thank-you-message.show {
+  opacity: 1;
+  max-height: 50px;
 }
 
 footer {
@@ -178,12 +192,83 @@ footer {
 
 .activities-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr; /* 3 equal columns */
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 2rem;
   padding: 1rem 2rem;
 }
 
-.activities-video .pool-safely-video {
+.activities-video{
   width: 100%;
   height: auto;
+}
+
+.worksheets-grid .worksheet-links {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  list-style: none;
+  padding: 0;
+}
+
+.worksheets-grid .worksheet-links li {
+  text-align: center;
+}
+
+.worksheets-grid .worksheet-links img {
+  display: block;
+  margin: 0.5rem auto;
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  text-align: center;
+}
+
+.info-grid-two {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  text-align: center;
+  margin-top: 2rem;
+  justify-content: center;
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.info-grid section {
+  background: none;
+  padding: 1rem;
+}
+
+.info-grid a {
+  display: inline-block;
+  margin-top: 0.5rem;
+  text-decoration: underline;
+  color: var(--text);
+}
+
+.info-grid a:hover {
+  color: var(--accent);
+}
+
+.info-grid-two section {
+  background: none;
+  padding: 1rem;
+}
+
+.info-grid-two a {
+  display: inline-block;
+  margin-top: 0.5rem;
+  text-decoration: underline;
+  color: var(--text);
+}
+
+.info-grid-two a:hover {
+  color: var(--accent);
 }

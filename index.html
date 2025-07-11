@@ -30,6 +30,7 @@
 
     <section class="survey">
     <h2>We value your feedback</h2>
+    <p id="thank-you-message">Thank you for your response!</p>
     <form action="#" method="post">
         <label for="name">Name *</label>
         <input type="text" id="name" name="name" required>
@@ -57,7 +58,25 @@
       <a href="info.html">More Information</a>
     </div>
     <p>Copyright 2025 Swim Safe Central. All Rights Reserved. For educational purposes only.</p>
-    <p>Contact us at safeswimcentral@sparky.com</p>
+    <p>Contact us at <a href="contact.html">safeswimcentral@sparky.com</a></p>
   </footer>
+
+  <!-- Short JavaScript to display thank you message for submitting feedback form || generated from ChatGPT-->
+  <script>
+    const form = document.querySelector(".survey form");
+    const thankYouMessage = document.getElementById("thank-you-message");
+
+    form.addEventListener("submit", function(e) {
+      e.preventDefault(); // Stop actual submission
+      thankYouMessage.classList.add("show"); // Fade in
+      form.reset(); // Clear form fields
+
+      // Hide after 2.5 seconds
+      setTimeout(() => {
+        thankYouMessage.classList.remove("show"); // Fade out
+      }, 2500);
+    });
+  </script>
+
 </body>
 </html>
